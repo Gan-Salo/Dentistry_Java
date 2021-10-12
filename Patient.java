@@ -5,7 +5,6 @@ public class Patient {
 	int age;
 	String phone;
 
-
 	public Patient(){
 		this.fio = "fio";
 		this.age = -1;
@@ -23,7 +22,7 @@ public class Patient {
 			return age;
 		}
 		else{ 
-			System.out.print("Ошибка, введите правильный возраст\n");
+			System.out.print("Ошибка, введите правильный возраст (от 1 до 120)\n");
 			return -1;
 		}	
 	}
@@ -43,11 +42,11 @@ public class Patient {
 
 	public void input(){
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Your fio: ");
+		System.out.print("ФИО пациента: ");
 		this.fio = scanner.nextLine();
 				
 		while (age < 0){
-			System.out.print("Your age: ");
+			System.out.print("Возраст пациента: ");
 			try {
 
 				this.age = age_check(scanner.nextInt()); 
@@ -61,13 +60,13 @@ public class Patient {
 		}
 		scanner.nextLine();
 		while (phone == "Error"){
-			System.out.print("Your phone: ");
+			System.out.print("Телефон пациента: ");
 			this.phone = phone_check(scanner.nextLine()); 
 		}
 	}
 
 	public void output(){
-		System.out.print("Fio: " + this.fio + ", Age: " + this.age + ", Phone: " + this.phone + "\n");
+		System.out.print("ФИО: " + this.fio + ", Возраст: " + this.age + ", Телефон: " + this.phone + "\n");
 	}
 
 }
